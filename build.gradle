@@ -18,8 +18,9 @@ dependencies{
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.2.3'
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.2.3'
-    // https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter
-    implementation group: 'tech.grasshopper', name: 'extentreports-cucumber6-adapter', version: '2.8.1'
+    //La dependencia de los reportes tiene que ser la misma generacion que la de cucumber en este caso es "7"
+    // https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter
+    implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.3.0'
     // https://mvnrepository.com/artifact/org.json/json
     implementation group: 'org.json', name: 'json', version: '20211205'
 
