@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Ejemplo de Request" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-20T02:22:20" hostname="LAPTOP-T3Q36G9U" time="0.047">
+  <properties/>
+  <testcase name="Prueba GET al endpoint." classname="Ejemplo de Request" time="0.047"/>
+  <system-out><![CDATA[Hola Marto
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
