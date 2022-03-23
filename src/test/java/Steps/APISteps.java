@@ -12,7 +12,7 @@ public class APISteps {
         System.out.println("Hola Marto");
     }
 
-    @Then("^I get a list of (\\d+) users$") //Empezamos la próxima clase con rest assured ya
+    @Then("^I get a 400 status code$") //Empezamos la próxima clase con rest assured ya
     public void validateListOfUser(int expectedUserSize){
 
     }
