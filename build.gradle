@@ -7,6 +7,11 @@ version '1.0.SNAPSHOT'
 
 sourceCompatibility = 1.11
 
+tasks.withType(Test){
+    scanForTestClasses = false
+    include "**/*Test.class"
+}
+
 repositories{
     mavenCentral()
 }
