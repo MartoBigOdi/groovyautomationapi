@@ -8,6 +8,8 @@ import io.cucumber.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "src/test/resources/features/APITest.feature",
+    plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber-reports.json"},
+    tags = "@API",
     glue = "Steps"
 )
 
