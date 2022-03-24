@@ -18,7 +18,7 @@ public class APISteps {
 
     @Given("^I send a GET request to the endpoint$")
     public void sendGETRequest(){
-       System.out.println("Marto");
+       System.out.println("Marto Probando un 200");
         request = given().baseUri("https://api.github.com").contentType(ContentType.JSON);
 
     }
