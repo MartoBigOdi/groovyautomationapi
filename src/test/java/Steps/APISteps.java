@@ -23,6 +23,7 @@ public class APISteps {
 
     }
 
+
     @Then("^I get a (\\d+) status code$") //Empezamos la próxima clase con rest assured ya
     public void expectedStatusCode(int expectedStatusCode){
         Response response = request
