@@ -11,6 +11,7 @@ import java.util.List;
 //Statics
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 //No olvidar de colocar para Cucumber ^ al principio del Step y $ al final.
@@ -63,6 +64,20 @@ public class APISteps {
                     int actualSizeList = jsonResponse.size();
                     //Validamos con un assert el expected size que traemos desde el feature y el int del size de la List.
                     assertEquals(expectedSize, actualSizeList);
+    }
+
+
+    @Then("^I validate there is a value: (.+) in the response at (.+) endpoint$")
+    public void validateValue(String expectedValue, String endpoint){
+        System.out.println("Marto Validando el contenido de una response con un expected String dentro de una List");
+            response = request
+                    .when()
+                    .get(endpoint);
+
+        List<String> jsonResponse = response.jsonPath().getList("username");//Tomamos los username para llenar la List.
+        //Mejoramos el mensaje de salida del Assert en caso de que no este el valor esperado.
+        assertTrue(jsonResponse.contains(expectedValue), "El valor "+ expectedValue + " no coincide.");
+
     }
 
 }
