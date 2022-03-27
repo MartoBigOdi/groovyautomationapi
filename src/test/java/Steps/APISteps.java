@@ -22,7 +22,7 @@ public class APISteps {
     //Para tener una instancia sola de request.
     private static RequestSpecification request;
     private static Response response;
-    private ValidatableResponse json;
+    private static ValidatableResponse json;
 
     /*
     * Mandamos el argumento desde el Gherkin.
@@ -73,11 +73,23 @@ public class APISteps {
             response = request
                     .when()
                     .get(endpoint);
-
+                                             //Usamos la funcion getList() de JsonPath
         List<String> jsonResponse = response.jsonPath().getList("username");//Tomamos los username para llenar la List.
         //Mejoramos el mensaje de salida del Assert en caso de que no este el valor esperado.
         assertTrue(jsonResponse.contains(expectedValue), "El valor "+ expectedValue + " no coincide.");
-
     }
+
+    @Then("^I validate there is a value inside the object: (.+) in the response at (.+) endpoint$")
+    public void validateValueInsideObject(String expectedValue, String endpoint){
+        System.out.println("Marto Validando un String dentro de un atributo de un objeto de una response con un expected String");
+        response = request
+                .when()
+                .get(endpoint);
+                                            //Usamos la funcion getString() de JsonPath
+        String jsonResponse = response.jsonPath().getString("address.street");//Tomamos un String del object
+        //Mejoramos el mensaje de salida del Assert en caso de que no este el valor esperado.
+        assertTrue(jsonResponse.contains(expectedValue), "El valor "+ expectedValue + " no coincide.");
+    }
+
 
 }
