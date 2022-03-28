@@ -9,7 +9,7 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(
     features = "src/test/resources/features/APITest.feature",
     plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber-reports.json"},
-    tags = "@API",
+    tags = "@BraveNewCoin",
     glue = "Steps"
 )
 
