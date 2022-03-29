@@ -1,6 +1,6 @@
 Feature: Ejercicios de Request
 
-  @API
+  @APISimple
 Scenario: Prueba GET al endpoint.
   Given I send a GET request to the https://api.github.com URI
   Then I get a 200 status code

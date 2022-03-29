@@ -5,11 +5,11 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-
-//Import statics para poder utilizar el metodo donde quiera
 import java.io.File;
 
+//Import statics para poder utilizar el metodo donde quiera
 import static io.restassured.RestAssured.given;
+
 
 public class BraveNewCoinAPISteps {
 
@@ -19,7 +19,8 @@ public class BraveNewCoinAPISteps {
 
     @Given("^I have a valid API Key for the (.+) URI$")
     public void iSetTheRequestParams(String URI){
-        request = given()
+                          //Esto hace que confiemos en el servidor sin necesitar un certificado de seguridad
+        request = given().relaxedHTTPSValidation()
                 .header("X-RapidAPI-Key", "f96cdd1539msh67750a467473abdp17db1djsn851b39d29434")
                 .header("X-RapidAPI-Host", "bravenewcoin.p.rapidapi.com")
                 .contentType(ContentType.JSON)
@@ -42,7 +43,7 @@ public class BraveNewCoinAPISteps {
 
     @Then("^I can validate I receive a valid token in the response$")
     public void validateTheToke(){
-
+        System.out.println("Marto Validando que venga el Token Bearer");
     }
 
 }
